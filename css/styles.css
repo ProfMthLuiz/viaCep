@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #04044c;
+  --secondary-bg-color: #494a7d;
+  --primary-color: #fff;
+  --secondary-color: #25cc88;
+  --text-color: #8789af;
+  --border-color: #20235b;
+}
+
+#checkout-page {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -- INICIO MESSAGE -- */
+
+#fade {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  flex-direction: column;
+}
+
+.hide {
+  display: none !important;
+}
+
+#message {
+  border-radius: 5px;
+  width: 40%;
+  background-color: #fff;
+}
+
+#alert{
+  padding: 20px;
+
+}
+
+#alert h4{
+  color: #333;
+  font-size: 20px;
+}
+
+#alert p{
+  color: #333;
+  border-bottom: 1px solid #333;
+  padding: 1.2em 0;
+}
+
+#alert p {
+  border-bottom: 1px solid #333;
+  padding: 1.2em 0;
+}
+
+#alert button{
+  background-color: #333;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* -- FIM MESSAGE -- */
+
+
+
+/* -- INICIO STEPS -- */
+
+#order-form-container {
+  padding: 1.5em;
+}
+
+#steps {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.step i {
+  background-color: var(--secondary-bg-color);
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.step .active {
+  background-color: var(--secondary-color);
+}
+
+.step p {
+  color: var(--text-color);
+  font-size: 17px;
+}
+
+.line {
+  border-bottom: 1px solid var(--border-color);
+  position: absolute;
+  top: 22.5px;
+  width: 90%;
+  left: 5%;
+  z-index: -1;
+}
+
+/* -- FIM STEPS -- */
+
+
+
+/* -- INICIO FORMHEADER -- */
+
+#form-header h2{
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+#form-header p {
+  margin-top: 10px;
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+/* -- FIM FORMHEADER -- */
+
+
+
+/* -- INICIO FORM -- */
+
+#order-form-container {
+  min-width: 700px;
+}
+
+/* -- FIM FORM -- */
+
+
+
+/* -- INICIO ADRESS-FORM -- */
+
+#adress-form input:focus {
+  border-color: var(--secondary-color);
+}
+
+#address-form{
+  margin-top: 10px;
+  display: grid;
+  grid-template-areas:
+    "cep cep"
+    "address number"
+    "complement neighborhood"
+    "city region";
+}
+
+#address-form input,
+#address-form select{
+  height: 60px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--primary-color);
+  padding: 1rem 0.75rem;
+  margin-bottom: 1rem;
+  margin-left: 5px;
+}
+
+#address-form input:disabled,
+#address-form select:disabled{
+
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+
+}
+
+#cep{
+  grid-area: cep;
+}
+
+#address{
+  grid-area: address;
+}
+
+#number{
+  grid-area: number;
+}
+
+#complement{
+  grid-area: complement;
+}
+
+#neighborhood{
+  grid-area: neighborhood;
+}
+
+#city{
+  grid-area: city;
+}
+
+#region{
+  grid-area: region;
+}
+
+#address-form #save-btn{
+  background-color: #25cc88;
+  border: none;
+  height: 3em;
+  width: 8em;
+  border-radius: 1.5em;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* -- FIM ADDRESS-FORM -- */
+
+
+
+/* -- INICIO LOADER -- */
+
+.c-loader {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: #51d4db;
+  height: 50px;
+  width: 50px;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* -- FIM LOADER -- */
+
+
+
+/* -- INICIO @MEDIAS -- */
+
+@media screen and  (min-width:320px) and (max-width: 505px) { 
+
+  #order-form-container {
+    min-width: 320px;
+  }
+
+  #address-form input,
+  #address-form select{
+    height: 60px;
+    width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 506px) and (max-width: 599px) {
+  
+  #order-form-container {
+    min-width: 506px;
+  }
+
+}
+
+@media screen and (min-width:600px) and (max-width: 800px){
+  
+  #order-form-container {
+    min-width: 600px;
+  }
+  
+}
+
+/* -- FIM @MEDIAS-- */
